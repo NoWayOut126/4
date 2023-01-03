@@ -1,0 +1,33 @@
+#Задание 1
+def prog(arr):
+summ = 0
+for i in range(len(arr)):
+if not i % 2:
+summ += arr[i]
+return summ * arr[-1] 
+print(prog(range(int(input('Введите число')))))
+#Задание 2
+array = []
+n = int(input('Количество элементов в массиве'))
+for i in range(n):
+array.append(int(input(f'{i+1}-е число: ')))
+index_min = index_max = 0
+value_min = value_max = array[0]
+for i, a in enumerate(array[1:], 1):
+if a < value_min:
+value_min = a
+index_min = i
+if a > value_max:
+value_max = a
+index_max = i
+print(array[index_min+1:index_max])
+if index_min < index_max:
+print(array[index_min+1:index_max])
+else:
+print(array[index_max+1:index_min])
+#Задание 3
+def checkio(values: list) -> list:
+return sorted(values, key=abs)
+print(checkio([-20, -5, 10, 15])) 
+print(checkio([1, 2, 3, 0])) 
+print(checkio([-1, -2, -3, 0]))
